@@ -141,14 +141,33 @@ Resposta resumida:
 }
 ```
 
+## 📚 Prospecção (artigo científico)
+
+Problema baseado em artigo revisado por pares:
+
+> Yang, Y., Feng, B., Salminen, J., & Jansen, B. J. (2022). *Optimal
+> advertising for a generalized Vidale–Wolfe response model.* **Electronic
+> Commerce Research**, 22(4), 1275–1305.
+> DOI: [10.1007/s10660-021-09468-x](https://doi.org/10.1007/s10660-021-09468-x).
+
+O artigo demonstra empiricamente, com dados reais de Google AdWords, Facebook
+Ads e Baidu Ads, que o retorno do investimento em mídia segue a **lei dos
+rendimentos marginais decrescentes** — a hipótese central do nosso modelo.
+Recorte, citação e justificativa completos em
+[docs/prospeccao.md](docs/prospeccao.md).
+
 ## 👥 Persona
 
-**Rafaela**, analista de marketing de uma loja de e-commerce. Já
-estimou (a partir do histórico) que a receita do Google Ads é
-aproximadamente `10x − 0,5x²` e a do Instagram `8y − 0,4y²` (com `x`,
-`y` em milhares de R$). Quer saber **quanto investir em cada canal** e
-**por que** essa é a alocação ótima — não só o número, mas a
-justificativa matemática para apresentar à diretoria.
+**Rafaela Mendes**, 31, analista de marketing digital de um e-commerce de
+moda. Divide um orçamento mensal de R$ 40 mil entre **Google Ads** e
+**Instagram Ads** decidindo "no feeling" — e desperdiça verba no canal já
+saturado. Já estima do histórico que a receita do Google é aprox. `10x − 0,5x²`
+e a do Instagram `8y − 0,4y²` (com `x`, `y` em milhares de R$). Quer saber
+**quanto investir em cada canal**, **por que** é a alocação ótima e ter a
+justificativa matemática para defender na diretoria.
+
+Persona completa (biografia, dor, métricas de sucesso e impacto esperado) em
+[docs/persona.md](docs/persona.md).
 
 ## ✅ Critérios PBL atendidos
 
@@ -159,7 +178,46 @@ justificativa matemática para apresentar à diretoria.
 - **Visualização 3D** da superfície com o ponto ótimo destacado.
 - **Front + back separados** (FastAPI + React).
 
+## 📄 Relatório e apresentação
+
+O relatório completo (5–10 páginas) está em
+[relatorio/relatorio.pdf](relatorio/relatorio.pdf) e os slides em
+[relatorio/apresentacao.pptx](relatorio/apresentacao.pptx). Ambos são
+**gerados programaticamente** e podem ser reproduzidos:
+
+```powershell
+# Relatório PDF (Python + reportlab, já em requirements.txt)
+cd backend
+.\.venv\Scripts\Activate.ps1
+python ..\relatorio\gerar_relatorio.py
+
+# Slides PPTX (Node + pptxgenjs)
+cd ..\relatorio
+npm install
+node gerar_slides.js
+```
+
+## 🤖 Declaração de uso de IA
+
+Conforme exigido pela disciplina, declaramos o uso de ferramentas de IA neste
+projeto. Assistentes de IA (Claude) foram usados como **apoio** para:
+
+- redação e revisão de texto da documentação (README, relatório, persona);
+- *scaffolding* inicial do código (estrutura FastAPI/React) e dos testes;
+- localização e formatação da referência bibliográfica.
+
+A **modelagem matemática** (função objetivo, gradiente, Hessiana, classificação)
+foi conferida manualmente pela equipe, e os resultados numéricos são validados
+pelos testes automatizados em `backend/tests/`. Nenhum conteúdo foi entregue sem
+revisão humana.
+
+## 📜 Licença
+
+Distribuído sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE).
+
 ## 👨‍💻 Equipe
+
+Equipe de até 3 integrantes:
 
 - Felipe Brazão
 - Gabriel Goes
